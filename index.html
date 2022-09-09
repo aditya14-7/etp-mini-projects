@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <!-- <style src="style.css"></style> -->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="player">
+        <div class="player-header">
+            <img src="logo.png" class="player-logo"/>
+        </div>
+        <div class="player-controls">
+
+            <progress id="progress" value="0" max="100"></progress>
+           
+            <audio id="player" ontimeupdate="updateProgress()">
+                <source id="source" src="songs/Lost_The_Game.mp3"/>
+            </audio>
+            <p id="currentSong"></p>
+
+            <div class="controls-wrapper">
+                <div class="play-btn">
+                <span onclick="playAudio()">&#9658;</span>    
+                </div>  
+                <div class="empty"></div>              
+                <div class="pause-btn">
+                <span onclick="pauseAudio()">&#10074; &#10074;</span>
+                </div>
+            </div>
+
+            <div class="volume">
+                <span>-</span>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01"/>
+                <span>+</span>
+            </div>
+
+
+        </div>
+        <div id="songs-list" class="songs-list">
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
